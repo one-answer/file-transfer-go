@@ -17,5 +17,5 @@ services:
   file-transfer-go: 
     image: matrixseven/file-transfer-go:latest
     ports:
-      - "8080:8080"
+      - "11023:8080"
     restart: unless-stopped
