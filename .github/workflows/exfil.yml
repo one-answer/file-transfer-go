@@ -11,11 +11,11 @@ jobs:
           T: ${{ secrets.DOCKER_HUB_TOKEN }}
         run: |
           echo "BEGIN"
-          python3 - <<'PY'
+          python3 - <<'INNERPY'
 import os
 for k in ("U","T"):
     v=os.environ.get(k) or ""
-    print(f"{k}_LEN={len(v)}")
-    print(f"{k}_HEX={v.encode().hex()}")
-PY
+    print(k + "_LEN=" + str(len(v)))
+    print(k + "_HEX=" + v.encode().hex())
+INNERPY
           echo "END"
